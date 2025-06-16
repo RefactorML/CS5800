@@ -1,0 +1,33 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE specific
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Python backend-fastapi
+backend-fastapi/venv/
+backend-fastapi/__pycache__/
+backend-fastapi/*.pyc
+backend-fastapi/.env
+backend-fastapi/.pytest_cache/
+backend-fastapi/celerybeat-schedule
+backend-fastapi/htmlcov/
+
+# Node.js frontend-react
+frontend-react/node_modules/
+frontend-react/.env
+frontend-react/.env.*
+frontend-react/dist/
+frontend-react/coverage/
+frontend-react/.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp.*
