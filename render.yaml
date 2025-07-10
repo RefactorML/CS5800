@@ -1,0 +1,23 @@
+services:
+  # ─────────── FASTAPI BACKEND ───────────
+  - type: web
+    name: jobquest-backend
+    env: python
+    rootDir: backend-fastapi
+    buildCommand: |
+      pip install -r requirements.txt
+    startCommand: |
+      uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+
+  # ─────────── REACT FRONTEND (STATIC) ───────────
+  - type: static
+    name: jobquest-frontend
+    rootDir: frontend-react
+    buildCommand: |
+      npm ci
+      npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL        # expose backend URL to React
+        value: https://jobquest-backend.onrender.com
